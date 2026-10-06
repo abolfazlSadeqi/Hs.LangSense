@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Hs.LangSense.AspNetCore</RootNamespace>
+    <AssemblyName>Hs.LangSense.AspNetCore</AssemblyName>
+    <PackageId>Hs.LangSense.AspNetCore</PackageId>
+    <Version>4.0.2</Version>
+    <Description>ASP.NET Core middleware and dependency injection integration for Hs.LangSense.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Hs.LangSense/Hs.LangSense.csproj" />
+  </ItemGroup>
+</Project>

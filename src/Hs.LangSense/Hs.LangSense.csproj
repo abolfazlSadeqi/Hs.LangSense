@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<RootNamespace>Hs.LangSense</RootNamespace>
+		<AssemblyName>Hs.LangSense</AssemblyName>
+
+		<PackageId>Hs.LangSense</PackageId>
+		<Version>1.0.0</Version>
+
+		<Description>Practical multilingual text and value intelligence for .NET: conversion, normalization, validation, detection, extraction, Persian and Iranian data, security and ASP.NET Core.</Description>
+
+		<Authors>Hs.LangSense Contributors</Authors>
+		<Copyright>Copyright © 2026 Hs.LangSense Contributors</Copyright>
+
+		<PackageTags>multilingual;Persian;Arabic;English;normalization;conversion;validation;extraction;Iran;banking;identity;Unicode;ASP.NET;data-quality</PackageTags>
+
+		<PackageProjectUrl>https://github.com/abolfazlSadeqi/Hs.LangSense</PackageProjectUrl>
+
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/abolfazlSadeqi/Hs.LangSense.git</RepositoryUrl>
+
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<PackageReleaseNotes>Initial release of Hs.LangSense 1.0.0. Multilingual text normalization, conversion, validation, extraction, Persian and Iranian data utilities, security helpers, and ASP.NET Core support.</PackageReleaseNotes>
+
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md"
+			  Pack="true"
+			  PackagePath="\" />
+
+		<None Include="LICENSE.txt"
+			  Pack="true"
+			  PackagePath="\" />
+	</ItemGroup>
+
+</Project>

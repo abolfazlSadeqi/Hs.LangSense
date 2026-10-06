@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Hs.LangSense.FluentValidation</RootNamespace>
+    <AssemblyName>Hs.LangSense.FluentValidation</AssemblyName>
+    <PackageId>Hs.LangSense.FluentValidation</PackageId>
+    <Version>4.0.2</Version>
+    <Description>FluentValidation integrations for Hs.LangSense.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Hs.LangSense/Hs.LangSense.csproj" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+</Project>

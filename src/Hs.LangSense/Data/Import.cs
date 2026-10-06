@@ -1,0 +1,8 @@
+using System.Data;
+namespace Hs.LangSense;
+public interface IDataSourceAdapter { IEnumerable<IDictionary<string,object?>> Read(Stream stream,string? fileName=null); }
+public interface IOcrCleaner { string Clean(string text,out IReadOnlyList<RepairSuggestion> suggestions); }
+public static class CsvDataSource { public static IEnumerable<IDictionary<string,object?>> Read(string csv,char separator=','){using var sr=new StringReader(csv);var header=sr.ReadLine()?.Split(separator)??[];string? line;while((line=sr.ReadLine())!=null){var cells=line.Split(separator);var row=new Dictionary<string,object?>(StringComparer.OrdinalIgnoreCase);for(var i=0;i<header.Length;i++)row[header[i]]=i<cells.Length?cells[i]:null;yield return row;}} }
+public static class DataTableAnalyzer { public static DataQualityReport Analyze(DataTable table){var rows=table.Rows.Cast<DataRow>().Select(r=>table.Columns.Cast<DataColumn>().ToDictionary(c=>c.ColumnName,c=>r[c] is DBNull?null:r[c]));return DataQuality.Analyze(rows.SelectMany(x=>x.Values));} public static IReadOnlyDictionary<string,ValueType> InferSchema(DataTable table)=>DatasetAnalyzer.InferSchema(table.Rows.Cast<DataRow>().Select(r=>table.Columns.Cast<DataColumn>().ToDictionary(c=>c.ColumnName,c=>r[c] is DBNull?null:r[c]))); }
+public static class ImportIntelligence { public static ImportReport Analyze(IEnumerable<IDictionary<string,object?>> rows){var list=rows.ToList();return new(list.Count,DatasetAnalyzer.InferSchema(list),DataQuality.Analyze(list.SelectMany(x=>x.Values)));} }
+public sealed record ImportReport(int Rows,IReadOnlyDictionary<string,ValueType> Schema,DataQualityReport Quality);
